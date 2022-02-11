@@ -1,0 +1,227 @@
+{
+	"maps": [
+		"Asylum",
+		"Bleasdale Farmhouse",
+		"Brownstone High School",
+		"Edgefield Street House",
+		"Grafton Farmhouse",
+		"Maple Lodge Campsite",
+		"Prison",
+		"Ridgeview Road House",
+		"Tanglewood Street House",
+		"Willow Street House"
+	],
+	"ghosts": [
+		{
+			"type": "Banshee",
+			"evidences": [
+				"Ghost Orbs",
+				"Fingerprints",
+				"D.O.T.S Projector"
+			],
+			"strength": "Will target only one player at a time.",
+			"weakness": "Crucifix effectiveness is increased to 5m against one."
+		},
+		{
+			"type": "Demon",
+			"evidences": [
+				"Freezing Temperatures",
+				"Fingerprints",
+				"Ghost Writing"
+			],
+			"strength": "Can initiate hunts more often.",
+			"weakness": "Using cursed possessions will lower sanity less."
+		},
+		{
+			"type": "Goryo",
+			"evidences": [
+				"EMF 5",
+				"Fingerprints",
+				"D.O.T.S Projector"
+			],
+			"strength": "Can only be seen interacting with D.O.T.S. through a camera when nobody is nearby.",
+			"weakness": "Tends to wander away less from its ghost room."
+		},
+		{
+			"type": "Hantu",
+			"evidences": [
+				"Ghost Orbs",
+				"Freezing Temperatures",
+				"Fingerprints"
+			],
+			"strength": "Lower temperatures allow the Hantu to move faster.",
+			"weakness": "Warmer areas slow the Hantu's movement."
+		},
+		{
+			"type": "Jinn",
+			"evidences": [
+				"EMF 5",
+				"Freezing Temperatures",
+				"Fingerprints"
+			],
+			"strength": "Travels at faster speeds if its victim is far away.",
+			"weakness": "Cannot use its ability if the site's fuse box is off."
+		},
+		{
+			"type": "Mare",
+			"evidences": [
+				"Ghost Orbs",
+				"Spirit Box",
+				"Ghost Writing"
+			],
+			"strength": "Has an increased chance to attack in the dark.",
+			"weakness": "Turning the lights on will reduce the chance of an attack."
+		},
+		{
+			"type": "Myling",
+			"evidences": [
+				"EMF 5",
+				"Fingerprints",
+				"Ghost Writing"
+			],
+			"strength": "Has quieter footsteps during a hunt.",
+			"weakness": "Produces paranormal sounds more frequently."
+		},
+		{
+			"type": "Obake",
+			"evidences": [
+				"EMF 5",
+				"Ghost Orbs",
+				"Fingerprints"
+			],
+			"strength": "May leave fingerprints that disappear quicker.",
+			"weakness": "Has a small chance of leaving six-fingered handprints."
+		},
+		{
+			"type": "Oni",
+			"evidences": [
+				"EMF 5",
+				"Freezing Temperatures",
+				"D.O.T.S Projector"
+			],
+			"strength": "Increased activity and ghost events.",
+			"weakness": "An Oni's increased activity makes them easier to find."
+		},
+		{
+			"type": "Onryo",
+			"evidences": [
+				"Ghost Orbs",
+				"Spirit Box",
+				"Freezing Temperatures"
+			],
+			"strength": "A flame extinguishing can cause an Onryo to attack.",
+			"weakness": "The presence of flames reduces the Onryo's ability to attack."
+		},
+		{
+			"type": "Phantom",
+			"evidences": [
+				"Spirit Box",
+				"Fingerprints",
+				"D.O.T.S Projector"
+			],
+			"strength": "Looking at a Phantom will lower the player's sanity considerably.",
+			"weakness": "Taking a photo of the Phantom will cause it to briefly disappear."
+		},
+		{
+			"type": "Poltergeist",
+			"evidences": [
+				"Spirit Box",
+				"Fingerprints",
+				"Ghost Writing"
+			],
+			"strength": "Capable of throwing multiple objects at once.",
+			"weakness": "Becomes powerless with no throwables nearby."
+		},
+		{
+			"type": "Raiju",
+			"evidences": [
+				"EMF 5",
+				"Ghost Orbs",
+				"D.O.T.S Projector"
+			],
+			"strength": "Moves faster near electrical devices.",
+			"weakness": "Disrupts electronic equipment from further away when it hunts."
+		},
+		{
+			"type": "Revenant",
+			"evidences": [
+				"Ghost Orbs",
+				"Freezing Temperatures",
+				"Ghost Writing"
+			],
+			"strength": "Can travel significantly faster if a player is spotted during a hunt.",
+			"weakness": "Moves very slowly when not chasing a player."
+		},
+		{
+			"type": "Shade",
+			"evidences": [
+				"EMF 5",
+				"Freezing Temperatures",
+				"Ghost Writing"
+			],
+			"strength": "Being shy makes it more difficult to locate and obtain evidence.",
+			"weakness": "Less likely to hunt if multiple people are nearby."
+		},
+		{
+			"type": "Spirit",
+			"evidences": [
+				"EMF 5",
+				"Spirit Box",
+				"Ghost Writing"
+			],
+			"strength": "None.",
+			"weakness": "Smudge sticks are more effective, preventing a hunt for longer."
+		},
+		{
+			"type": "The Mimic",
+			"evidences": [
+				"Spirit Box",
+				"Freezing Temperatures",
+				"Ghost Orbs",
+				"Fingerprints"
+			],
+			"strength": "Can mimic the abilities and traits of other ghosts.",
+			"weakness": "Will present Ghost Orbs as a secondary evidence."
+		},
+		{
+			"type": "The Twins",
+			"evidences": [
+				"EMF 5",
+				"Spirit Box",
+				"Freezing Temperatures"
+			],
+			"strength": "Either Twin may start a hunt, though not at the same time.",
+			"weakness": "Will often interact with the environment at the same time."
+		},
+		{
+			"type": "Wraith",
+			"evidences": [
+				"EMF 5",
+				"Spirit Box",
+				"D.O.T.S Projector"
+			],
+			"strength": "Does not leave UV footprints after stepping in salt.",
+			"weakness": "Will become more active if it steps in salt."
+		},
+		{
+			"type": "Yokai",
+			"evidences": [
+				"Ghost Orbs",
+				"Spirit Box",
+				"D.O.T.S Projector"
+			],
+			"strength": "Talking near the Yokai will anger it, increasing the chance to attack.",
+			"weakness": "Can only hear voices close to it during a hunt."
+		},
+		{
+			"type": "Yurei",
+			"evidences": [
+				"Ghost Orbs",
+				"Freezing Temperatures",
+				"D.O.T.S Projector"
+			],
+			"strength": "Has a stronger effect on sanity.",
+			"weakness": "Smudging the Yurei's ghost room will reduce how often it wanders."
+		}
+	]
+}

@@ -1,26 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <MapManager />
+  <EvidenceSelector />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import EvidenceSelector from "./components/EvidenceSelector.vue";
+import MapManager from "./components/MapManager.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    EvidenceSelector,
+    MapManager,
+  },
+};
 </script>
 
 <style>
 #app {
+  position: absolute;
+
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #fff;
 }
 </style>
