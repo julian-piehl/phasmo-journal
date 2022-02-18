@@ -20,7 +20,7 @@
 				"D.O.T.S Projector"
 			],
 			"strength": "Will target only one player at a time.",
-			"weakness": "Crucifix effectiveness is increased to 5m against one."
+			"weakness": "Can sometimes be heard wailing with the Parabolic Microphone."
 		},
 		{
 			"type": "Demon",
@@ -30,7 +30,7 @@
 				"Ghost Writing"
 			],
 			"strength": "Can initiate hunts more often.",
-			"weakness": "Using cursed possessions will lower sanity less."
+			"weakness": "Crucifix effectiveness is increased to 5m against one."
 		},
 		{
 			"type": "Goryo",
