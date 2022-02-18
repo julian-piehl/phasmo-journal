@@ -1,5 +1,5 @@
 <template>
-  <div id="wrapper" :style="{ height: pixelSize }">
+  <div id="wrapper" :style="{ maxHeight: pixelSize }">
     <img :src="map" draggable="false" />
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
       return require("@/assets/maps/" + map.replaceAll(" ", "_") + ".png");
     },
     pixelSize() {
-      if (this.map == 0) return "0";
+      if (this.map == "") return "0";
       return this.size + "px";
     },
   },
@@ -35,7 +35,8 @@ export default {
   background: #000;
 }
 img {
-  margin: auto;
-  height: 100%;
+  margin: 0 auto;
+  max-height: 100%;
+  max-width: 100%;
 }
 </style>
