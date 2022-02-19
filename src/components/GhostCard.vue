@@ -23,29 +23,33 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "GhostCard",
-  props: ["ghost"],
-  data() {
-    return {};
-  },
-  methods: {
-    isMustEvidence(evidence) {
-      const evidences = this.$store.getters.evidences;
+<script lang="ts">
+import { Vue } from "vue-class-component";
+import { Prop } from "vue-property-decorator";
 
-      const evidenceFound = evidences.find((x) => x.type == evidence);
+import Ghost from "@/interfaces/Ghost";
+import Evidence from "@/interfaces/Evidence";
 
-      return evidenceFound.state == true;
-    },
-    togglePossible() {
-      this.$store.commit("TOGGLE_GHOST_MANUAL_POSSIBLE", this.ghost);
-    },
-  },
-};
+export default class GhostCard extends Vue {
+  @Prop()
+  ghost: Ghost | undefined = undefined;
+
+  isMustEvidence(evidence: string): boolean {
+    const evidences: Evidence[] = this.$store.getters.evidences;
+
+    const evidenceFound = evidences.find((x) => x.type == evidence);
+
+    if (!evidenceFound) return false;
+    return evidenceFound.state == true;
+  }
+
+  togglePossible(): void {
+    this.$store.commit("TOGGLE_GHOST_MANUAL_POSSIBLE", this.ghost);
+  }
+}
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .ghost {
   border: 1px solid #45474e;
 
@@ -57,43 +61,46 @@ export default {
   margin: 10px;
 
   transition: 0.2s;
-}
-.ghost.disabled {
-  opacity: 0.25;
-  user-select: none;
-}
 
-.ghost h1 {
-  cursor: pointer;
+  &.disabled {
+    opacity: 0.25;
+    user-select: none;
 
-  display: block;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 400;
+    h1 {
+      text-decoration: line-through;
+    }
+  }
 
-  padding-bottom: 10px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid black;
-}
-.ghost.disabled h1 {
-  text-decoration: line-through;
-}
+  h1 {
+    cursor: pointer;
 
-.ghost h2 {
-  display: block;
-  font-size: 1rem;
-  font-weight: 700;
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 400;
 
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid black;
+  }
 
-ul,
-p {
-  margin-left: 20px;
-  line-height: 1.5;
-}
-.evidences li.must {
-  color: rgb(0, 162, 255);
+  h2 {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+
+  ul,
+  p {
+    margin-left: 20px;
+    line-height: 1.5;
+  }
+
+  .evidences li.must {
+    color: rgb(0, 162, 255);
+  }
 }
 </style>

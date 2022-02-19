@@ -4,35 +4,35 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { Vue, Options } from "vue-class-component";
 import GhostCard from "./GhostCard.vue";
 
-export default {
-  name: "PossibleGhosts",
+import Ghost from "@/interfaces/Ghost";
+import Evidence from "@/interfaces/Evidence";
+
+@Options({
   components: {
     GhostCard,
   },
-  data() {
-    return {};
-  },
-  computed: {
-    ghosts: function () {
-      return this.$store.getters.possibleGhosts;
-    },
-  },
-  methods: {
-    isMustEvidence(evidence) {
-      const evidences = this.$store.getters.evidences;
+})
+export default class PossibleGhosts extends Vue {
+  get ghosts(): Ghost[] {
+    return this.$store.getters.possibleGhosts;
+  }
 
-      const evidenceFound = evidences.find((x) => x.type == evidence);
+  isMustEvidence(evidence: string): boolean {
+    const evidences: Evidence[] = this.$store.getters.evidences;
 
-      return evidenceFound.state == true;
-    },
-  },
-};
+    const evidenceFound = evidences.find((x) => x.type == evidence);
+
+    if (!evidenceFound) return false;
+    return evidenceFound.state == true;
+  }
+}
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 #ghosts {
   display: flex;
   flex-wrap: wrap;

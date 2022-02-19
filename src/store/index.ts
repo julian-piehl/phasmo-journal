@@ -1,17 +1,21 @@
 import { createStore } from "vuex";
 
+import VuexState from "@/interfaces/VuexState";
+import Ghost from "@/interfaces/Ghost";
+import Evidence from "@/interfaces/Evidence";
+
 // Ghosts
-import json from "./../../data.json";
+import json from "@/../data.json";
 
-const ghosts = [];
+const ghosts: Ghost[] = [];
 
-json.ghosts.forEach((ghost) => {
+json.ghosts.forEach((ghost: Ghost) => {
   ghost.manualPossible = true;
   ghosts.push(ghost);
 });
 
 // Evidences
-let evidences = [];
+let evidences: string[] = [];
 
 json.ghosts.forEach((ghost) => {
   evidences = [...evidences, ...ghost.evidences];
@@ -20,17 +24,16 @@ json.ghosts.forEach((ghost) => {
 evidences = [...new Set(evidences)];
 evidences.sort();
 
-const evidenceObjects = [];
+const evidenceObjects: Evidence[] = [];
 evidences.forEach((evidence) => {
   evidenceObjects.push({
     type: evidence,
     state: null,
+    blocked: false,
   });
 });
 
-// Possible Evidences
-
-export default createStore({
+export default createStore<VuexState>({
   state: {
     ghosts: ghosts,
     evidences: evidenceObjects,
@@ -40,19 +43,19 @@ export default createStore({
   },
   getters: {
     possibleGhosts(state) {
-      const mustHaveEvidences = [];
-      const mustNotHaveEvidences = [];
+      const mustHaveEvidences: string[] = [];
+      const mustNotHaveEvidences: string[] = [];
 
-      state.evidences.forEach((evidence) => {
+      state.evidences.forEach((evidence: Evidence) => {
         if (evidence.blocked) return;
         if (evidence.state === false) mustNotHaveEvidences.push(evidence.type);
 
         if (evidence.state) mustHaveEvidences.push(evidence.type);
       });
 
-      const possibleGhosts = [];
+      const possibleGhosts: Ghost[] = [];
 
-      state.ghosts.forEach((ghost) => {
+      state.ghosts.forEach((ghost: Ghost) => {
         let possible = true;
         mustHaveEvidences.forEach((evidence) => {
           if (!ghost.evidences.includes(evidence)) possible = false;
@@ -64,25 +67,11 @@ export default createStore({
         if (possible) possibleGhosts.push(ghost);
       });
 
-      //   let evidences = [];
-      //   possibleGhosts.forEach((ghost) => {
-      //     evidences = [...evidences, ...ghost.evidences];
-      //   });
-      //   evidences = [...new Set(evidences)];
-
-      //   state.evidences.forEach((evidence) => {
-      //     if (!evidences.includes(evidence.type) && evidence.state == null) {
-      //       evidence.blocked = true;
-      //     } else {
-      //       evidence.blocked = false;
-      //     }
-      //   });
-
       return possibleGhosts;
     },
 
     evidences(state, getters) {
-      let allEvidences = [];
+      let allEvidences: string[] = [];
 
       json.ghosts.forEach((ghost) => {
         allEvidences = [...allEvidences, ...ghost.evidences];
@@ -91,22 +80,26 @@ export default createStore({
       allEvidences = [...new Set(allEvidences)];
       allEvidences.sort();
 
-      let remainingEvidences = [];
-      getters.possibleGhosts.forEach((ghost) => {
+      let remainingEvidences: string[] = [];
+      getters.possibleGhosts.forEach((ghost: Ghost) => {
         remainingEvidences = [...remainingEvidences, ...ghost.evidences];
       });
       remainingEvidences = [...new Set(remainingEvidences)];
 
-      const evidenceObjects = [];
+      const evidenceObjects: Evidence[] = [];
+
       allEvidences.forEach((evidence) => {
-        const evidenceState = state.evidences.find(
+        const evidenceFound: Evidence | undefined = state.evidences.find(
           (x) => x.type == evidence
-        ).state;
+        );
+
+        if (!evidenceFound) return;
+
         const blocked =
-          !remainingEvidences.includes(evidence) && evidenceState == null;
+          !remainingEvidences.includes(evidence) && evidenceFound.state == null;
         evidenceObjects.push({
           type: evidence,
-          state: evidenceState,
+          state: evidenceFound.state,
           blocked: blocked,
         });
       });
@@ -115,27 +108,38 @@ export default createStore({
     },
   },
   mutations: {
-    UPDATE_EVIDENCE_STATE(state, evidence) {
+    UPDATE_EVIDENCE_STATE(state, evidence: Evidence) {
       if (evidence.blocked) return;
 
+      const evidenceFound: Evidence | undefined = state.evidences.find(
+        (x) => x.type == evidence.type
+      );
+
+      if (!evidenceFound) return;
+
       if (evidence.state === null) {
-        state.evidences.find((x) => x.type == evidence.type).state = true;
+        evidenceFound.state = true;
       } else if (evidence.state === true) {
-        state.evidences.find((x) => x.type == evidence.type).state = false;
+        evidenceFound.state = false;
       } else {
-        state.evidences.find((x) => x.type == evidence.type).state = null;
+        evidenceFound.state = null;
       }
     },
 
-    TOGGLE_GHOST_MANUAL_POSSIBLE(state, toggleGhost) {
-      const ghost = state.ghosts.find((x) => x.type == toggleGhost.type);
+    TOGGLE_GHOST_MANUAL_POSSIBLE(state, toggleGhost: Ghost) {
+      const ghost: Ghost | undefined = state.ghosts.find(
+        (x) => x.type == toggleGhost.type
+      );
+
+      if (!ghost) return;
 
       ghost.manualPossible = !ghost.manualPossible;
     },
 
-    UPDATE_SELECTED_MAP(state, map) {
+    UPDATE_SELECTED_MAP(state, map: string) {
       state.selectedMap = map;
     },
   },
   actions: {},
+  modules: {},
 });

@@ -1,30 +1,17 @@
 <template>
-  <MapManager />
-  <EvidenceSelector />
+  <router-view />
 </template>
 
-<script>
-import EvidenceSelector from "./components/EvidenceSelector.vue";
-import MapManager from "./components/MapManager.vue";
-
-export default {
-  name: "App",
-  components: {
-    EvidenceSelector,
-    MapManager,
-  },
-};
-</script>
-
-<style>
+<style lang="scss">
 #app {
   position: absolute;
 
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #fff;
 
   width: 100%;
+  min-height: 100vh;
+  height: 100%;
 }
 </style>

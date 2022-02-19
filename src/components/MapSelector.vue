@@ -4,25 +4,28 @@
   </select>
 </template>
 
-<script>
-export default {
-  name: "MapSelector",
-  data() {
-    return {
-      maps: this.$store.state.maps,
-    };
-  },
-  computed: {
-    selectedMap: {
-      get() {
-        return this.$store.state.selectedMap;
-      },
-      set(value) {
-        this.$store.commit("UPDATE_SELECTED_MAP", value);
-      },
-    },
-  },
-};
+<script lang="ts">
+import { Vue } from "vue-class-component";
+
+export default class MapSelector extends Vue {
+  get maps(): string[] {
+    return this.$store.state.maps;
+  }
+
+  get selectedMap(): string {
+    return this.$store.state.selectedMap;
+  }
+  set selectedMap(value: string) {
+    this.$store.commit("UPDATE_SELECTED_MAP", value);
+  }
+}
 </script>
 
-<style scoped></style>
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="scss">
+select {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+}
+</style>
