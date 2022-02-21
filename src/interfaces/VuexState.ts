@@ -7,6 +7,8 @@ interface VuexState {
 
   maps: string[];
   selectedMap: string;
+
+  nightmareMode: boolean;
 }
 
 export default VuexState;

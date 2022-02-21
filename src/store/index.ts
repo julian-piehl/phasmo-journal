@@ -40,6 +40,8 @@ export default createStore<VuexState>({
 
     maps: json.maps,
     selectedMap: "",
+
+    nightmareMode: false,
   },
   getters: {
     possibleGhosts(state) {
@@ -60,8 +62,18 @@ export default createStore<VuexState>({
         mustHaveEvidences.forEach((evidence) => {
           if (!ghost.evidences.includes(evidence)) possible = false;
         });
+
+        let notCount = 0;
         mustNotHaveEvidences.forEach((evidence) => {
-          if (ghost.evidences.includes(evidence)) possible = false;
+          if (ghost.evidences.includes(evidence)) {
+            if (state.nightmareMode) {
+              notCount++;
+
+              if (notCount > ghost.evidences.length / 2) possible = false;
+            } else {
+              possible = false;
+            }
+          }
         });
 
         if (possible) possibleGhosts.push(ghost);
