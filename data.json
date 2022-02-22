@@ -20,7 +20,8 @@
 				"D.O.T.S Projector"
 			],
 			"strength": "Will target only one player at a time.",
-			"weakness": "Can sometimes be heard wailing with the Parabolic Microphone."
+			"weakness": "Can sometimes be heard wailing with the Parabolic Microphone.",
+			"characteristics": []
 		},
 		{
 			"type": "Demon",
@@ -30,7 +31,8 @@
 				"Ghost Writing"
 			],
 			"strength": "Can initiate hunts more often.",
-			"weakness": "Crucifix effectiveness is increased to 5m against one."
+			"weakness": "Crucifix effectiveness is increased to 5m against one.",
+			"characteristics": []
 		},
 		{
 			"type": "Goryo",
@@ -40,7 +42,8 @@
 				"D.O.T.S Projector"
 			],
 			"strength": "Can only be seen interacting with D.O.T.S. through a camera when nobody is nearby.",
-			"weakness": "Tends to wander away less from its ghost room."
+			"weakness": "Tends to wander away less from its ghost room.",
+			"characteristics": []
 		},
 		{
 			"type": "Hantu",
@@ -50,7 +53,8 @@
 				"Fingerprints"
 			],
 			"strength": "Lower temperatures allow the Hantu to move faster.",
-			"weakness": "Warmer areas slow the Hantu's movement."
+			"weakness": "Warmer areas slow the Hantu's movement.",
+			"characteristics": []
 		},
 		{
 			"type": "Jinn",
@@ -60,7 +64,14 @@
 				"Fingerprints"
 			],
 			"strength": "Travels at faster speeds if its victim is far away.",
-			"weakness": "Cannot use its ability if the site's fuse box is off."
+			"weakness": "Cannot use its ability if the site's fuse box is off.",
+			"characteristics": [
+				{
+					"text": "A Jinn can't turn off the breaker. You could hide and keep the breaker on to see if the ghost will eventually turn it off.",
+					"question": "Does it turned off the breaker?",
+					"expected": false
+				}
+			]
 		},
 		{
 			"type": "Mare",
@@ -70,7 +81,8 @@
 				"Ghost Writing"
 			],
 			"strength": "Has an increased chance to attack in the dark.",
-			"weakness": "Turning the lights on will reduce the chance of an attack."
+			"weakness": "Turning the lights on will reduce the chance of an attack.",
+			"characteristics": []
 		},
 		{
 			"type": "Myling",
@@ -80,7 +92,8 @@
 				"Ghost Writing"
 			],
 			"strength": "Has quieter footsteps during a hunt.",
-			"weakness": "Produces paranormal sounds more frequently."
+			"weakness": "Produces paranormal sounds more frequently.",
+			"characteristics": []
 		},
 		{
 			"type": "Obake",
@@ -90,7 +103,15 @@
 				"Fingerprints"
 			],
 			"strength": "May leave fingerprints that disappear quicker.",
-			"weakness": "Has a small chance of leaving six-fingered handprints."
+			"weakness": "Has a small chance of leaving six-fingered handprints.",
+			"characteristics": [
+				{
+					"text": "There is also a rare chance that the Obake will leave a Fingerprint on the door with six fingers! So count the amount of fingers on your fingerprints!",
+					"question": "Do the fingerprints have six fingers?",
+					"expected": true,
+					"obviously": true
+				}
+			]
 		},
 		{
 			"type": "Oni",
@@ -100,7 +121,8 @@
 				"D.O.T.S Projector"
 			],
 			"strength": "Increased activity and ghost events.",
-			"weakness": "An Oni's increased activity makes them easier to find."
+			"weakness": "An Oni's increased activity makes them easier to find.",
+			"characteristics": []
 		},
 		{
 			"type": "Onryo",
@@ -110,7 +132,8 @@
 				"Freezing Temperatures"
 			],
 			"strength": "A flame extinguishing can cause an Onryo to attack.",
-			"weakness": "The presence of flames reduces the Onryo's ability to attack."
+			"weakness": "The presence of flames reduces the Onryo's ability to attack.",
+			"characteristics": []
 		},
 		{
 			"type": "Phantom",
@@ -120,7 +143,8 @@
 				"D.O.T.S Projector"
 			],
 			"strength": "Looking at a Phantom will lower the player's sanity considerably.",
-			"weakness": "Taking a photo of the Phantom will cause it to briefly disappear."
+			"weakness": "Taking a photo of the Phantom will cause it to briefly disappear.",
+			"characteristics": []
 		},
 		{
 			"type": "Poltergeist",
@@ -130,7 +154,8 @@
 				"Ghost Writing"
 			],
 			"strength": "Capable of throwing multiple objects at once.",
-			"weakness": "Becomes powerless with no throwables nearby."
+			"weakness": "Becomes powerless with no throwables nearby.",
+			"characteristics": []
 		},
 		{
 			"type": "Raiju",
@@ -140,7 +165,8 @@
 				"D.O.T.S Projector"
 			],
 			"strength": "Moves faster near electrical devices.",
-			"weakness": "Disrupts electronic equipment from further away when it hunts."
+			"weakness": "Disrupts electronic equipment from further away when it hunts.",
+			"characteristics": []
 		},
 		{
 			"type": "Revenant",
@@ -150,7 +176,8 @@
 				"Ghost Writing"
 			],
 			"strength": "Can travel significantly faster if a player is spotted during a hunt.",
-			"weakness": "Moves very slowly when not chasing a player."
+			"weakness": "Moves very slowly when not chasing a player.",
+			"characteristics": []
 		},
 		{
 			"type": "Shade",
@@ -160,7 +187,8 @@
 				"Ghost Writing"
 			],
 			"strength": "Being shy makes it more difficult to locate and obtain evidence.",
-			"weakness": "Less likely to hunt if multiple people are nearby."
+			"weakness": "Less likely to hunt if multiple people are nearby.",
+			"characteristics": []
 		},
 		{
 			"type": "Spirit",
@@ -170,7 +198,8 @@
 				"Ghost Writing"
 			],
 			"strength": "None.",
-			"weakness": "Smudge sticks are more effective, preventing a hunt for longer."
+			"weakness": "Smudge sticks are more effective, preventing a hunt for longer.",
+			"characteristics": []
 		},
 		{
 			"type": "The Mimic",
@@ -181,7 +210,8 @@
 				"Fingerprints"
 			],
 			"strength": "Can mimic the abilities and traits of other ghosts.",
-			"weakness": "Will present Ghost Orbs as a secondary evidence."
+			"weakness": "Will present Ghost Orbs as a secondary evidence.",
+			"characteristics": []
 		},
 		{
 			"type": "The Twins",
@@ -191,7 +221,8 @@
 				"Freezing Temperatures"
 			],
 			"strength": "Either Twin may start a hunt, though not at the same time.",
-			"weakness": "Will often interact with the environment at the same time."
+			"weakness": "Will often interact with the environment at the same time.",
+			"characteristics": []
 		},
 		{
 			"type": "Wraith",
@@ -201,7 +232,8 @@
 				"D.O.T.S Projector"
 			],
 			"strength": "Does not leave UV footprints after stepping in salt.",
-			"weakness": "Will become more active if it steps in salt."
+			"weakness": "Will become more active if it steps in salt.",
+			"characteristics": []
 		},
 		{
 			"type": "Yokai",
@@ -211,7 +243,8 @@
 				"D.O.T.S Projector"
 			],
 			"strength": "Talking near the Yokai will anger it, increasing the chance to attack.",
-			"weakness": "Can only hear voices close to it during a hunt."
+			"weakness": "Can only hear voices close to it during a hunt.",
+			"characteristics": []
 		},
 		{
 			"type": "Yurei",
@@ -221,7 +254,8 @@
 				"D.O.T.S Projector"
 			],
 			"strength": "Has a stronger effect on sanity.",
-			"weakness": "Smudging the Yurei's ghost room will reduce how often it wanders."
+			"weakness": "Smudging the Yurei's ghost room will reduce how often it wanders.",
+			"characteristics": []
 		}
 	]
 }

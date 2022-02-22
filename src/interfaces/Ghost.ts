@@ -1,3 +1,5 @@
+import Characteristic from "./Characteristic";
+
 interface Ghost {
   type: string;
   evidences: string[];
@@ -5,6 +7,8 @@ interface Ghost {
   weakness: string;
 
   manualPossible?: boolean;
+
+  characteristics: Characteristic[];
 }
 
 export default Ghost;

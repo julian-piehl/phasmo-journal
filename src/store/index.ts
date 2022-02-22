@@ -1,8 +1,9 @@
 import { createStore } from "vuex";
 
-import VuexState from "@/interfaces/VuexState";
-import Ghost from "@/interfaces/Ghost";
+import Characteristic from "@/interfaces/Characteristic";
 import Evidence from "@/interfaces/Evidence";
+import Ghost from "@/interfaces/Ghost";
+import VuexState from "@/interfaces/VuexState";
 
 // Ghosts
 import json from "@/../data.json";
@@ -11,6 +12,11 @@ const ghosts: Ghost[] = [];
 
 json.ghosts.forEach((ghost: Ghost) => {
   ghost.manualPossible = true;
+
+  ghost.characteristics.forEach((characteristic: Characteristic) => {
+    characteristic.value = null;
+  });
+
   ghosts.push(ghost);
 });
 
@@ -44,7 +50,7 @@ export default createStore<VuexState>({
     nightmareMode: false,
   },
   getters: {
-    possibleGhosts(state) {
+    possibleGhosts(state): Ghost[] {
       const mustHaveEvidences: string[] = [];
       const mustNotHaveEvidences: string[] = [];
 
@@ -55,13 +61,18 @@ export default createStore<VuexState>({
         if (evidence.state) mustHaveEvidences.push(evidence.type);
       });
 
-      const possibleGhosts: Ghost[] = [];
+      let possibleGhosts: Ghost[] = [];
+      let obviously = false;
 
       state.ghosts.forEach((ghost: Ghost) => {
+        if (obviously) return;
+
         let possible = true;
         mustHaveEvidences.forEach((evidence) => {
           if (!ghost.evidences.includes(evidence)) possible = false;
         });
+
+        if (!possible) return;
 
         let notCount = 0;
         mustNotHaveEvidences.forEach((evidence) => {
@@ -76,16 +87,35 @@ export default createStore<VuexState>({
           }
         });
 
+        if (!possible) return;
+
+        ghost.characteristics.forEach((characteristic: Characteristic) => {
+          if (
+            characteristic.value != null &&
+            characteristic.value != characteristic.expected
+          ) {
+            possible = false;
+          }
+
+          if (
+            characteristic.value == characteristic.expected &&
+            characteristic.obviously
+          ) {
+            possibleGhosts = [];
+            obviously = true;
+          }
+        });
+
         if (possible) possibleGhosts.push(ghost);
       });
 
       return possibleGhosts;
     },
 
-    evidences(state, getters) {
+    evidences(state, getters): Evidence[] {
       let allEvidences: string[] = [];
 
-      json.ghosts.forEach((ghost) => {
+      state.ghosts.forEach((ghost) => {
         allEvidences = [...allEvidences, ...ghost.evidences];
       });
 
@@ -118,6 +148,16 @@ export default createStore<VuexState>({
 
       return evidenceObjects;
     },
+
+    characteristics(state, getters): Characteristic[] {
+      let allCharacteristics: Characteristic[] = [];
+
+      state.ghosts.forEach((ghost: Ghost) => {
+        allCharacteristics = [...allCharacteristics, ...ghost.characteristics];
+      });
+
+      return allCharacteristics;
+    },
   },
   mutations: {
     UPDATE_EVIDENCE_STATE(state, evidence: Evidence) {
@@ -135,6 +175,31 @@ export default createStore<VuexState>({
         evidenceFound.state = false;
       } else {
         evidenceFound.state = null;
+      }
+    },
+
+    UPDATE_CHARACTERISTIC_STATE(state, characteristic: Characteristic) {
+      console.log(characteristic);
+
+      //   characteristic.value = !characteristic.value;
+
+      let characteristicFound!: Characteristic;
+      state.ghosts.forEach((ghost) => {
+        ghost.characteristics.forEach((testCharacteristic) => {
+          if (testCharacteristic.question == characteristic.question) {
+            characteristicFound = testCharacteristic;
+          }
+        });
+      });
+
+      if (!characteristicFound) return;
+
+      if (characteristicFound.value === null) {
+        characteristicFound.value = true;
+      } else if (characteristicFound.value === true) {
+        characteristicFound.value = false;
+      } else {
+        characteristicFound.value = null;
       }
     },
 
