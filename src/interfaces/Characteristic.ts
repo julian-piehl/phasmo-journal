@@ -4,7 +4,10 @@ interface Characteristic {
   expected: boolean | null;
 
   value?: boolean | null;
-  obviously?: boolean;
+
+  successShow: boolean;
+  errorShow: boolean;
+  showOnly?: boolean;
 }
 
 export default Characteristic;

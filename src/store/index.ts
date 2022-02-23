@@ -62,10 +62,10 @@ export default createStore<VuexState>({
       });
 
       let possibleGhosts: Ghost[] = [];
-      let obviously = false;
+      let showOnly = false;
 
       state.ghosts.forEach((ghost: Ghost) => {
-        if (obviously) return;
+        if (showOnly) return;
 
         let possible = true;
         mustHaveEvidences.forEach((evidence) => {
@@ -92,17 +92,18 @@ export default createStore<VuexState>({
         ghost.characteristics.forEach((characteristic: Characteristic) => {
           if (
             characteristic.value != null &&
-            characteristic.value != characteristic.expected
+            ((characteristic.value != characteristic.expected &&
+              !characteristic.errorShow) ||
+              (characteristic.value == characteristic.expected &&
+                !characteristic.successShow))
           ) {
             possible = false;
-          }
-
-          if (
+          } else if (
             characteristic.value == characteristic.expected &&
-            characteristic.obviously
+            characteristic.showOnly
           ) {
             possibleGhosts = [];
-            obviously = true;
+            showOnly = true;
           }
         });
 
@@ -132,7 +133,7 @@ export default createStore<VuexState>({
 
       allEvidences.forEach((evidence) => {
         const evidenceFound: Evidence | undefined = state.evidences.find(
-          (x) => x.type == evidence
+          (x: Evidence) => x.type == evidence
         );
 
         if (!evidenceFound) return;
@@ -152,8 +153,24 @@ export default createStore<VuexState>({
     characteristics(state, getters): Characteristic[] {
       let allCharacteristics: Characteristic[] = [];
 
+      const possibleGhosts = getters.possibleGhosts;
+
       state.ghosts.forEach((ghost: Ghost) => {
-        allCharacteristics = [...allCharacteristics, ...ghost.characteristics];
+        if (!possibleGhosts.find((x: Ghost) => x.type == ghost.type)) {
+          ghost.characteristics.forEach((characteristic) => {
+            if (
+              characteristic.value != undefined &&
+              characteristic.value != null
+            ) {
+              allCharacteristics = [...allCharacteristics, characteristic];
+            }
+          });
+        } else {
+          allCharacteristics = [
+            ...allCharacteristics,
+            ...ghost.characteristics,
+          ];
+        }
       });
 
       return allCharacteristics;
