@@ -21,7 +21,17 @@
 			],
 			"strength": "Will target only one player at a time.",
 			"weakness": "Can sometimes be heard wailing with the Parabolic Microphone.",
-			"characteristics": []
+			"characteristics": [
+				{
+					"text": "You can recognise the Banshee by the sound that it can make inside of a parabolic mic.",
+					"question": "Did you heared a scream trough the Parabolic mic?",
+					"expected": true,
+
+					"successShow": true,
+					"errorShow": true,
+					"showOnly": true
+				}
+			]
 		},
 		{
 			"type": "Demon",
@@ -43,7 +53,16 @@
 			],
 			"strength": "Can only be seen interacting with D.O.T.S. through a camera when nobody is nearby.",
 			"weakness": "Tends to wander away less from its ghost room.",
-			"characteristics": []
+			"characteristics": [
+				{
+					"text": "The Goryo's D.O.T.S can only be seen on the Camera. If you saw it without a Camera it's not a Goryo!",
+					"question": "Did you saw D.O.T.S without a camera?",
+					"expected": false,
+
+					"successShow": true,
+					"errorShow": false
+				}
+			]
 		},
 		{
 			"type": "Hantu",
@@ -68,8 +87,11 @@
 			"characteristics": [
 				{
 					"text": "A Jinn can't turn off the breaker. You could hide and keep the breaker on to see if the ghost will eventually turn it off.",
-					"question": "Does it turned off the breaker?",
-					"expected": false
+					"question": "Did it turned off the breaker?",
+					"expected": false,
+
+					"successShow": true,
+					"errorShow": false
 				}
 			]
 		},
@@ -107,9 +129,12 @@
 			"characteristics": [
 				{
 					"text": "There is also a rare chance that the Obake will leave a Fingerprint on the door with six fingers! So count the amount of fingers on your fingerprints!",
-					"question": "Do the fingerprints have six fingers?",
+					"question": "Did you saw a fingerprint with six fingers?",
 					"expected": true,
-					"obviously": true
+
+					"successShow": true,
+					"errorShow": true,
+					"showOnly": true
 				}
 			]
 		},
@@ -133,7 +158,16 @@
 			],
 			"strength": "A flame extinguishing can cause an Onryo to attack.",
 			"weakness": "The presence of flames reduces the Onryo's ability to attack.",
-			"characteristics": []
+			"characteristics": [
+				{
+					"text": "If the ghost starts a hunt while there are lit candles in the room it cannot be an Onryo.",
+					"question": "Did the Ghost started a hunt while lit candles were in the Ghostroom?",
+					"expected": false,
+
+					"successShow": true,
+					"errorShow": false
+				}
+			]
 		},
 		{
 			"type": "Phantom",
@@ -144,7 +178,17 @@
 			],
 			"strength": "Looking at a Phantom will lower the player's sanity considerably.",
 			"weakness": "Taking a photo of the Phantom will cause it to briefly disappear.",
-			"characteristics": []
+			"characteristics": [
+				{
+					"text": "If the ghost starts a hunt while there are lit candles in the room it cannot be an Onryo.",
+					"question": "Did it immediately disappeared after taking a photo from a ghost event?",
+					"expected": true,
+
+					"successShow": true,
+					"errorShow": false,
+					"showOnly": true
+				}
+			]
 		},
 		{
 			"type": "Poltergeist",
@@ -155,7 +199,17 @@
 			],
 			"strength": "Capable of throwing multiple objects at once.",
 			"weakness": "Becomes powerless with no throwables nearby.",
-			"characteristics": []
+			"characteristics": [
+				{
+					"text": "A Poltergeist is the only ghost that can throw multiple items at once.",
+					"question": "Did it throw multiple items at the same time?",
+					"expected": true,
+
+					"successShow": true,
+					"errorShow": true,
+					"showOnly": true
+				}
+			]
 		},
 		{
 			"type": "Raiju",
@@ -233,7 +287,16 @@
 			],
 			"strength": "Does not leave UV footprints after stepping in salt.",
 			"weakness": "Will become more active if it steps in salt.",
-			"characteristics": []
+			"characteristics": [
+				{
+					"text": "If it steps in Salt and then doesn't show footprints while you can hear it stepping around in the room it's a Wraith!",
+					"question": "Did it had footpints after stepping in salt and walking around?",
+					"expected": false,
+
+					"successShow": true,
+					"errorShow": false
+				}
+			]
 		},
 		{
 			"type": "Yokai",
@@ -255,7 +318,17 @@
 			],
 			"strength": "Has a stronger effect on sanity.",
 			"weakness": "Smudging the Yurei's ghost room will reduce how often it wanders.",
-			"characteristics": []
+			"characteristics": [
+				{
+					"text": "A Yurei has a ghost event that fully closes a door that is near you. So keep doors open!",
+					"question": "Did it fully closed the nearest door after performing a ghost event?",
+					"expected": true,
+
+					"successShow": true,
+					"errorShow": true,
+					"showOnly": true
+				}
+			]
 		}
 	]
 }
