@@ -128,8 +128,26 @@
 			"weakness": "Has a small chance of leaving six-fingered handprints.",
 			"characteristics": [
 				{
-					"text": "There is also a rare chance that the Obake will leave a Fingerprint on the door with six fingers! So count the amount of fingers on your fingerprints!",
+					"text": "There is a rare chance that the Obake will leave a Fingerprint on the door with six fingers! So count the amount of fingers on your fingerprints!",
 					"question": "Did you saw a fingerprint with six fingers?",
+					"expected": true,
+
+					"successShow": true,
+					"errorShow": true,
+					"showOnly": true
+				},
+				{
+					"text": "There is a rare chance that the Obake will leave a double Fingerprint on light switches!",
+					"question": "Did you saw a fingerprint with two fingers on a lightswitch?",
+					"expected": true,
+
+					"successShow": true,
+					"errorShow": true,
+					"showOnly": true
+				},
+				{
+					"text": "There is a rare chance that the Obake will leave five fingerprints (a hand) on prison doors and keyboards!",
+					"question": "Did you saw a fingerprint with five fingers on a prison door or keyboard?",
 					"expected": true,
 
 					"successShow": true,
