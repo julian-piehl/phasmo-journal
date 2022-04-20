@@ -49,10 +49,18 @@ export default class Characteristics extends Vue {
 
 <style scoped lang="scss">
 #characteristics {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   padding: 10px 25px;
   border-bottom: 1px solid black;
+
+  @media screen and (max-width: 2100px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 1275px) {
+    grid-template-columns: 1fr;
+  }
 
   .characteristic {
     display: flex;
@@ -64,7 +72,7 @@ export default class Characteristics extends Vue {
     user-select: none;
 
     font-weight: 400;
-    font-size: 1.25rem;
+    font-size: 18px;
 
     transition: 0.2s;
 

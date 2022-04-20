@@ -55,7 +55,6 @@ export default class GhostCard extends Vue {
 
   min-width: 300px;
 
-  flex: 1 1 20%;
   padding: 20px;
   padding-top: 10px;
   margin: 10px;
