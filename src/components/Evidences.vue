@@ -66,21 +66,24 @@ export default class Evidences extends Vue {
     }
 
     &:hover:not(.blocked) {
-      border: 2px solid #6d707a;
+      filter: brightness(150%);
     }
 
     &.enabled {
-      background-color: #2e2f33;
+      background-color: $positive-background;
+      border-color: $positive;
     }
     &.disabled {
       text-decoration: line-through;
+      background-color: $negative-background;
+      border-color: $negative;
     }
     &.blocked {
       cursor: default;
+      opacity: 0.3;
     }
     &.disabled,
     &.blocked {
-      opacity: 0.5;
       color: #b4b4b4;
     }
   }

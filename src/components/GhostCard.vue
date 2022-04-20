@@ -99,7 +99,7 @@ export default class GhostCard extends Vue {
   }
 
   .evidences li.must {
-    color: rgb(0, 162, 255);
+    color: $positive-text;
   }
 }
 </style>

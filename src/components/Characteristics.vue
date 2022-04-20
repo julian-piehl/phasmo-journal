@@ -13,12 +13,10 @@
       <div class="icon">
         <font-awesome-icon
           :icon="['far', 'check-square']"
-          style="color: green"
           v-if="characteristic.value"
         />
         <font-awesome-icon
           :icon="['fa', 'times-square']"
-          style="color: red"
           v-if="!characteristic.value && characteristic.value != null"
         />
         <font-awesome-icon
@@ -76,14 +74,24 @@ export default class Characteristics extends Vue {
 
     transition: 0.2s;
 
-    &.enabled,
+    &.enabled {
+      color: $positive-text;
+    }
+
     &.disabled {
-      color: #b4b4b4;
+      color: $negative-text;
     }
 
     .icon {
       margin-right: 7px;
       font-size: 1rem;
+
+      .fa-square-check {
+        color: $positive;
+      }
+      .fa-square-xmark {
+        color: $negative;
+      }
     }
   }
 }

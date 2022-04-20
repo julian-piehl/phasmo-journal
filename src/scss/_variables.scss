@@ -1,0 +1,7 @@
+$positive: #008000;
+$positive-text: lighten($positive, 10%);
+$positive-background: transparentize($positive, 0.9);
+
+$negative: #a30000;
+$negative-text: lighten($negative, 10%);
+$negative-background: transparentize($negative, 0.9);
