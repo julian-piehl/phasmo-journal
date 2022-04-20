@@ -7,6 +7,10 @@ const routes: Array<RouteRecordRaw> = [
     name: "home",
     component: MapView,
   },
+  {
+    path: "/:pathMatch(.*)*",
+    redirect: "/",
+  },
 ];
 
 const router = createRouter({
