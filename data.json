@@ -347,6 +347,30 @@
 					"showOnly": true
 				}
 			]
+		},
+		{
+			"type": "Deogen",
+			"evidences": [],
+			"strength": "",
+			"weakness": "",
+			"characteristics": [],
+			"secret": true
+		},
+		{
+			"type": "Moroi",
+			"evidences": [],
+			"strength": "",
+			"weakness": "",
+			"characteristics": [],
+			"secret": true
+		},
+		{
+			"type": "Thaye",
+			"evidences": [],
+			"strength": "",
+			"weakness": "",
+			"characteristics": [],
+			"secret": true
 		}
 	]
 }

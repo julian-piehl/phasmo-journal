@@ -1,7 +1,7 @@
 <template>
   <div class="ghost" :class="{ disabled: !ghost.manualPossible }">
     <h1 class="button" @click="togglePossible">{{ ghost.type }}</h1>
-    <div>
+    <div v-if="!ghost?.secret">
       <h2>Evidences:</h2>
       <ul class="evidences">
         <li
@@ -13,12 +13,16 @@
         </li>
       </ul>
     </div>
-    <div>
+    <div v-if="!ghost?.secret">
       <h2>Strength:</h2>
       <p>{{ ghost.strength }}</p>
 
       <h2>Weakness:</h2>
       <p>{{ ghost.weakness }}</p>
+    </div>
+    <div class="secret" v-if="ghost?.secret">
+      This is one of the new Ghosts.<br />
+      Until now, all the details are a mystery.
     </div>
   </div>
 </template>
@@ -100,6 +104,10 @@ export default class GhostCard extends Vue {
 
   .evidences li.must {
     color: $positive-text;
+  }
+
+  .secret {
+    line-height: 1.5;
   }
 }
 </style>

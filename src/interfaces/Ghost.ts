@@ -9,6 +9,8 @@ interface Ghost {
   manualPossible?: boolean;
 
   characteristics: Characteristic[];
+
+  secret?: boolean;
 }
 
 export default Ghost;

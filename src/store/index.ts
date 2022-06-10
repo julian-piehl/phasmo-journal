@@ -65,6 +65,10 @@ export default createStore<VuexState>({
       let showOnly = false;
 
       state.ghosts.forEach((ghost: Ghost) => {
+        if (ghost.secret) {
+          possibleGhosts.push(ghost);
+          return;
+        }
         if (showOnly) return;
 
         let possible = true;
