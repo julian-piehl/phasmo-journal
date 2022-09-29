@@ -338,8 +338,8 @@
 			"weakness": "Smudging the Yurei's ghost room will reduce how often it wanders.",
 			"characteristics": [
 				{
-					"text": "A Yurei has a ghost event that fully closes a door that is near you. So keep doors open!",
-					"question": "Did it fully closed the nearest door after performing a ghost event?",
+					"text": "A Yurei can fully close a door that is near you without performing a ghost event. So keep doors open!",
+					"question": "Did it fully closed the nearest door?",
 					"expected": true,
 
 					"successShow": true,
