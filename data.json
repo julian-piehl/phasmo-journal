@@ -1,15 +1,14 @@
 {
 	"maps": [
-		"Asylum",
 		"Bleasdale Farmhouse",
 		"Brownstone High School",
-		"Edgefield Street House",
+		"Camp Woodwind",
+		"42 Edgefield Road",
 		"Grafton Farmhouse",
 		"Maple Lodge Campsite",
 		"Prison",
-		"Ridgeview Road House",
-		"Tanglewood Street House",
-		"Willow Street House"
+		"10 Ridgeview Court",
+		"Sunny Meadows Mental Institution"
 	],
 	"ghosts": [
 		{
