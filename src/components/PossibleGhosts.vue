@@ -40,15 +40,15 @@ export default class PossibleGhosts extends Vue {
 
   margin: 10px;
 
-  @media screen and(max-width: 1500px) {
+  @media screen and (max-width: 1500px) {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media screen and(max-width: 1100px) {
+  @media screen and (max-width: 1100px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media screen and(max-width: 750px) {
+  @media screen and (max-width: 750px) {
     grid-template-columns: repeat(1, 1fr);
   }
 }
