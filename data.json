@@ -23,7 +23,7 @@
 			"characteristics": [
 				{
 					"text": "You can recognise the Banshee by the sound that it can make inside of a parabolic mic.",
-					"question": "Did you heared a scream trough the Parabolic mic?",
+					"question": "Did you hear a screech trough the Parabolic mic?",
 					"expected": true,
 
 					"successShow": true,
@@ -55,7 +55,7 @@
 			"characteristics": [
 				{
 					"text": "The Goryo's D.O.T.S can only be seen on the Camera. If you saw it without a Camera it's not a Goryo!",
-					"question": "Did you saw D.O.T.S without a camera?",
+					"question": "Did you see D.O.T.S without a camera?",
 					"expected": false,
 
 					"successShow": true,
@@ -86,7 +86,7 @@
 			"characteristics": [
 				{
 					"text": "A Jinn can't turn off the breaker. You could hide and keep the breaker on to see if the ghost will eventually turn it off.",
-					"question": "Did it turned off the breaker?",
+					"question": "Did it turn off the breaker?",
 					"expected": false,
 
 					"successShow": true,
@@ -128,7 +128,7 @@
 			"characteristics": [
 				{
 					"text": "There is a rare chance that the Obake will leave a Fingerprint on the door with six fingers! So count the amount of fingers on your fingerprints!",
-					"question": "Did you saw a fingerprint with six fingers?",
+					"question": "Did you see a fingerprint with six fingers?",
 					"expected": true,
 
 					"successShow": true,
@@ -137,7 +137,7 @@
 				},
 				{
 					"text": "There is a rare chance that the Obake will leave a double Fingerprint on light switches!",
-					"question": "Did you saw a fingerprint with two fingers on a lightswitch?",
+					"question": "Did you see a fingerprint with two fingers on a light switch?",
 					"expected": true,
 
 					"successShow": true,
@@ -146,7 +146,7 @@
 				},
 				{
 					"text": "There is a rare chance that the Obake will leave five fingerprints (a hand) on prison doors and keyboards!",
-					"question": "Did you saw a fingerprint with five fingers on a prison door or keyboard?",
+					"question": "Did you see a fingerprint with five fingers on a prison cell door or keyboard?",
 					"expected": true,
 
 					"successShow": true,
@@ -178,7 +178,7 @@
 			"characteristics": [
 				{
 					"text": "If the ghost starts a hunt while there are lit candles in the room it cannot be an Onryo.",
-					"question": "Did the Ghost started a hunt while lit candles were in the Ghostroom?",
+					"question": "Did the Ghost start a hunt in a room with lit candles?",
 					"expected": false,
 
 					"successShow": true,
@@ -198,7 +198,7 @@
 			"characteristics": [
 				{
 					"text": "If the ghost starts a hunt while there are lit candles in the room it cannot be an Onryo.",
-					"question": "Did it immediately disappeared after taking a photo from a ghost event?",
+					"question": "Did it disappeared after taking a photo in a ghost event or the photo labeled \"Ghost\" has no distortion?",
 					"expected": true,
 
 					"successShow": true,
@@ -307,7 +307,7 @@
 			"characteristics": [
 				{
 					"text": "If it steps in Salt and then doesn't show footprints while you can hear it stepping around in the room it's a Wraith!",
-					"question": "Did it had footpints after stepping in salt and walking around?",
+					"question": "Did it have footpints after stepping in salt and walking around?",
 					"expected": false,
 
 					"successShow": true,
@@ -338,7 +338,7 @@
 			"characteristics": [
 				{
 					"text": "A Yurei can fully close a door that is near you without performing a ghost event. So keep doors open!",
-					"question": "Did it fully closed the nearest door?",
+					"question": "Did it fully close a door?",
 					"expected": true,
 
 					"successShow": true,
