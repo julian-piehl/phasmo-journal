@@ -198,7 +198,7 @@
 			"characteristics": [
 				{
 					"text": "If the ghost starts a hunt while there are lit candles in the room it cannot be an Onryo.",
-					"question": "Did it disappeared after taking a photo in a ghost event or the photo labeled \"Ghost\" has no distortion?",
+					"question": "Did it disappear after taking a photo in a ghost event or the photo labeled \"Ghost\" has no distortion?",
 					"expected": true,
 
 					"successShow": true,
